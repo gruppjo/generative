@@ -1,6 +1,6 @@
 html {
   background-color: #00203c;
-  background: -webkit-linear-gradient(300deg, #00203c, #003d60);
+  background: -webkit-linear-gradient(300deg, #00203c, #00598c);
 }
 body {
   padding: 60px;
@@ -13,9 +13,8 @@ body {
   /* color: #00203c;
   background-color: #c2e3ff; */
 
+
   color: #648df6;
-
-
 }
 
 .semibold {
@@ -56,12 +55,13 @@ hr {
 .gallery > div {
   margin-top: 20px;
   width: calc((100% - 40px) / 3);
-  height: 300px;
-  background-color: teal;
   margin-right: 20px;
 }
 .gallery > div:nth-child(3n) {
   margin-right: 0px;
+}
+.gallery > div > video, img {
+  width: 100%;
 }
 
 @media screen and (max-width: 1280px) {
