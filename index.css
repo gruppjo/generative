@@ -1,8 +1,57 @@
 body {
-  font-family: 'Montserrat', sans-serif;
   padding: 60px;
+
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+
+  /* color: #00203c;
+  background-color: #c2e3ff; */
+
+  color: #56abf6;
+  background-color: #00203c;
+
 }
 
+.semibold {
+  font-weight: 600;
+}
+
+
 h1 {
-  font-size: 48px;
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+
+hr {
+  /* border-color: #56abf6; */
+  border-color: #004684;
+}
+
+
+@media screen and (max-width: 960px) {
+  body {
+    padding: 36px;
+  }
+  h1 {
+    font-size: 48px;
+  }
+  h2 {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  body {
+    padding: 16px;
+  }
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 24px;
+  }
 }
