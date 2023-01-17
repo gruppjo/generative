@@ -1,11 +1,10 @@
 html {
   background-color: #00203c;
-  background: -webkit-linear-gradient(300deg, #00203c, #00598c);
+  margin: 0;
 }
 body {
-  padding: 64px;
-  max-width: 1440px;
-  margin: auto;
+  margin: 0;
+  padding: 80px;
 
   font-size: 20px;
   font-family: 'Montserrat', sans-serif;
@@ -13,8 +12,15 @@ body {
   /* color: #00203c;
   background-color: #c2e3ff; */
 
-
   color: #648df6;
+
+  background: -webkit-linear-gradient(300deg, #00203c, #004166);
+
+}
+
+main {
+  max-width: 1440px;
+  margin: auto;
 }
 
 .semibold {
