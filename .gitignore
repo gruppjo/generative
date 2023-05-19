@@ -1,4 +1,9 @@
 node_modules
-/build
 /*.log
+
+# Build
+size-plugin.json
+#build/ #deactivated for GitHub Pages Build
+
+# MAC
 .DS_Store
