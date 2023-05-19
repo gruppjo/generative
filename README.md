@@ -1,5 +1,8 @@
 # generative-preact
 
+## Build
+- hosted on GitHub Pages via `docs/`
+
 ## CLI Commands
 
 ```bash
