@@ -78,7 +78,7 @@ module.exports =
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
+/******/ 	__webpack_require__.p = "/generative/";
 /******/
 /******/
 /******/ 	// Load entry module and return exports
@@ -680,7 +680,7 @@ var home_Home = function Home() {
   })), Object(external_preact_["h"])("div", null, Object(external_preact_["h"])(Video["a" /* default */], {
     basePath: "assets/media/various/abc_wire"
   })), Object(external_preact_["h"])("div", null, Object(external_preact_["h"])(Video["a" /* default */], {
-    basePath: "assets/media/various/abc_wire"
+    basePath: "assets/media/various/abc"
   })), Object(external_preact_["h"])("div", null, Object(external_preact_["h"])(Video["a" /* default */], {
     basePath: "assets/media/various/flow"
   })), Object(external_preact_["h"])("div", null, Object(external_preact_["h"])(Video["a" /* default */], {
@@ -732,6 +732,37 @@ var app_App = function App() {
 /* WEBPACK VAR INJECTION */(function(Fragment) {/* harmony import */ var preact__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("HteQ");
 /* harmony import */ var preact__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(preact__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var preact_hooks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("QRet");
+/* harmony import */ var _utils_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("zneo");
+
+
+
+
+// Video previews: https://muffinman.io/blog/hack-for-ios-safari-to-display-html-video-thumbnail/
+
+var Video = function Video(props) {
+  var basePath = props.basePath;
+  var ref = Object(preact_hooks__WEBPACK_IMPORTED_MODULE_1__[/* useRef */ "b"])();
+  var showVideo = Object(_utils_client__WEBPACK_IMPORTED_MODULE_2__[/* useInViewport */ "a"])(ref);
+  return Object(preact__WEBPACK_IMPORTED_MODULE_0__["h"])("video", {
+    ref: ref,
+    controls: true,
+    preload: "metadata"
+  }, showVideo && Object(preact__WEBPACK_IMPORTED_MODULE_0__["h"])(Fragment, null, Object(preact__WEBPACK_IMPORTED_MODULE_0__["h"])("source", {
+    src: "".concat(basePath, ".mp4#t=0.001"),
+    type: "video/mp4"
+  }), "Your browser does not support the video tag."));
+};
+/* harmony default export */ __webpack_exports__["a"] = (Video);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__("HteQ")["Fragment"]))
+
+/***/ }),
+
+/***/ "zneo":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return useInViewport; });
+/* harmony import */ var preact_hooks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("QRet");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -740,38 +771,39 @@ function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefine
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
-var Video = function Video(props) {
-  var basePath = props.basePath;
-  var ref = Object(preact_hooks__WEBPACK_IMPORTED_MODULE_1__[/* useRef */ "b"])();
-  var _useState = Object(preact_hooks__WEBPACK_IMPORTED_MODULE_1__[/* useState */ "c"])(''),
+// https://usefulangle.com/post/113/javascript-detecting-element-visible-during-scroll
+// alternative: https://www.javascripttutorial.net/dom/css/check-if-an-element-is-visible-in-the-viewport/
+
+var useInViewport = function useInViewport(ref) {
+  // Initialize state with undefined width so server and client renders match
+  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+  var _useState = Object(preact_hooks__WEBPACK_IMPORTED_MODULE_0__[/* useState */ "c"])(undefined),
     _useState2 = _slicedToArray(_useState, 2),
-    showVideo = _useState2[0],
-    setShowVideo = _useState2[1];
-  Object(preact_hooks__WEBPACK_IMPORTED_MODULE_1__[/* useEffect */ "a"])(function () {
-    if (!ref.current) return;
-    // const rect = ref.current.getBoundingClientRect();
-    // if (
-    //     rect.top >= 0 &&
-    //     rect.left >= 0 &&
-    //     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    //     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    // ) {
-    setShowVideo(true);
-    // }
-  }, []);
-  return (/* <!-- video previews https://muffinman.io/blog/hack-for-ios-safari-to-display-html-video-thumbnail/ --> */
-    Object(preact__WEBPACK_IMPORTED_MODULE_0__["h"])("video", {
-      ref: ref,
-      controls: true,
-      preload: "metadata"
-    }, showVideo && Object(preact__WEBPACK_IMPORTED_MODULE_0__["h"])(Fragment, null, Object(preact__WEBPACK_IMPORTED_MODULE_0__["h"])("source", {
-      src: "".concat(basePath, ".mp4#t=0.001"),
-      type: "video/mp4"
-    }), "Your browser does not support the video tag."))
-  );
+    visible = _useState2[0],
+    setVisible = _useState2[1];
+  Object(preact_hooks__WEBPACK_IMPORTED_MODULE_0__[/* useEffect */ "a"])(function () {
+    var handleScroll = function handleScroll() {
+      if (!(ref !== null && ref !== void 0 && ref.current)) return;
+      var rect = ref.current.getBoundingClientRect();
+
+      // partially visible
+      setVisible(rect.top < window.innerHeight && rect.bottom >= 0);
+    };
+
+    // Add event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Call handler right away so state gets updated with initial window size
+    handleScroll();
+
+    // Remove event listener on cleanup
+    return function () {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [ref]); // Empty array ensures that effect is only run on mount
+
+  return visible;
 };
-/* harmony default export */ __webpack_exports__["a"] = (Video);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__("HteQ")["Fragment"]))
 
 /***/ })
 
