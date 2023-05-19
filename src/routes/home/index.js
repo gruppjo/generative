@@ -1,6 +1,9 @@
 import { h } from 'preact';
 import style from './style.css';
 
+import Video from '../../components/Video';
+
+
 const Home = () => {
 	return (
 		<div class={style.home}>
@@ -15,114 +18,62 @@ const Home = () => {
       Arduino Heartbeat & Pressure Sensor, Touchdesigner, Python, Midi, Ableton
       <div class="gallery">
         <div>
-          <img src="/assets/media/guilty/guilty1.jpeg" />
+          <img src="assets/media/guilty/guilty1.jpeg" />
         </div>
         <div>
-          {/* <!-- video previews https://muffinman.io/blog/hack-for-ios-safari-to-display-html-video-thumbnail/ --> */}
-          <video controls preload="metadata">
-            <source src="/assets/media/guilty/guilty2.mp4#t=0.001" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <Video basePath="assets/media/guilty/guilty2" />
         </div>
         <div>
-          <video controls preload="metadata">
-            <source src="/assets/media/guilty/guilty3.mp4#t=0.001" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <Video basePath="assets/media/guilty/guilty3" />
         </div>
       </div>
       <h2>Various</h2>
       Touchdesigner, p5.js
       <div class="gallery">
         <div>
-          <video controls preload="metadata">
-            <source src="/assets/media/various/b.mp4#t=0.001" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <Video basePath="assets/media/various/b" />
         </div>
         <div>
-          <video controls preload="metadata">
-            <source src="/assets/media/various/rotate.mp4#t=0.001" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <Video basePath="assets/media/various/rotate" />
         </div>
         <div>
-          <video controls preload="metadata">
-            <source src="/assets/media/various/plane.mp4#t=0.001" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <Video basePath="assets/media/various/plane" />
         </div>
         <div>
-          <video controls preload="metadata">
-            <source src="/assets/media/various/abc_wire.mp4#t=0.001" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <Video basePath="assets/media/various/abc_wire" />
         </div>
         <div>
-          <video controls preload="metadata">
-            <source src="/assets/media/various/abc.mp4#t=0.001" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <Video basePath="assets/media/various/abc_wire" />
         </div>
         <div>
-          <video controls preload="metadata">
-            <source src="/assets/media/various/flow.mp4#t=0.001" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <Video basePath="assets/media/various/flow" />
         </div>
         <div>
-          <video controls preload="metadata">
-            <source src="/assets/media/various/flow2.mp4#t=0.001" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <Video basePath="assets/media/various/flow2" />
         </div>
         <div>
-          <video controls preload="metadata">
-            <source src="/assets/media/various/lineshader.mp4#t=0.001" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <Video basePath="assets/media/various/lineshader" />
         </div>
         <div>
-          <video controls preload="metadata">
-            <source src="/assets/media/various/disco.mp4#t=0.001" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <Video basePath="assets/media/various/disco" />
         </div>
         <div>
-          <video controls preload="metadata">
-            <source src="/assets/media/various/grid.mp4#t=0.001" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <Video basePath="assets/media/various/grid" />
         </div>
         <div>
-          <video controls preload="metadata">
-            <source src="/assets/media/various/disco_mini.mp4#t=0.001" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <Video basePath="assets/media/various/disco_mini" />
         </div>
         <div>
-          <video controls preload="metadata">
-            <source src="/assets/media/various/roughjapan.mp4#t=0.001" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <Video basePath="assets/media/various/roughjapan" />
         </div>
         <div>
-          <video controls preload="metadata">
-            <source src="/assets/media/various/topo2.mp4#t=0.001" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <Video basePath="assets/media/various/topo2" />
         </div>
         <div>
-          <video controls preload="metadata">
-            <source src="/assets/media/various/topo.mp4#t=0.001" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <Video basePath="assets/media/various/topo" />
         </div>
         <div>
-          <video controls preload="metadata">
-            <source src="/assets/media/various/windows_2.mp4#t=0.001" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <Video basePath="assets/media/various/windows_2" />
         </div>
       </div>
 
