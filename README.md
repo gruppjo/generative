@@ -2,6 +2,7 @@
 
 ## Build
 - hosted on GitHub Pages via `docs/`
+- public path set in `preact.config.js` [Link](https://stackoverflow.com/questions/45742982/set-base-url-for-preact-cli)
 
 ## CLI Commands
 
