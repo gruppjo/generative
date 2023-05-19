@@ -3,7 +3,7 @@ node_modules
 
 # Build
 size-plugin.json
-#build/ #deactivated for GitHub Pages Build
+build/
 
 # MAC
 .DS_Store
