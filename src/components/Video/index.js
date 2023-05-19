@@ -1,26 +1,16 @@
 import { h } from 'preact';
-import { useEffect, useRef, useState } from 'preact/hooks';
+import { useRef } from 'preact/hooks';
+import { useInViewport } from '../../utils/client';
+
+// Video previews: https://muffinman.io/blog/hack-for-ios-safari-to-display-html-video-thumbnail/
 
 const Video = (props) => {
   const { basePath } = props;
   const ref = useRef();
 
-  const [ showVideo, setShowVideo ] = useState('');
+  const showVideo = useInViewport(ref);
 
-  useEffect(() => {
-    if (!ref.current) return;
-    // const rect = ref.current.getBoundingClientRect();
-    // if (
-    //     rect.top >= 0 &&
-    //     rect.left >= 0 &&
-    //     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    //     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    // ) {
-      setShowVideo(true);
-    // }
-  }, [])
 	return (
-    /* <!-- video previews https://muffinman.io/blog/hack-for-ios-safari-to-display-html-video-thumbnail/ --> */
 		<video ref={ref} controls preload="metadata">
       { showVideo && (
         <>

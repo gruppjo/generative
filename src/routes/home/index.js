@@ -43,7 +43,7 @@ const Home = () => {
           <Video basePath="assets/media/various/abc_wire" />
         </div>
         <div>
-          <Video basePath="assets/media/various/abc_wire" />
+          <Video basePath="assets/media/various/abc" />
         </div>
         <div>
           <Video basePath="assets/media/various/flow" />
